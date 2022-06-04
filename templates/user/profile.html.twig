@@ -1,0 +1,42 @@
+ <link rel="stylesheet" href="/css/profile.css?v=<?php echo(rand()); ?>" />
+ <center>
+    <div id="titulo">
+        <h1>Mi perfil</h1>
+        <hr>
+        <h2>Bienvenido a tu espacio  {{user.name}}</h2>
+    </div>
+
+    <div id="contenido">
+        <button onclick="window.location='/user/profile'" class="cta">
+            <span class="hover-underline-animation"> Datos personales </span>
+            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+            </svg>
+        </button>
+
+        <button onclick="window.location='/user/payroll'" class="cta">
+            <span class="hover-underline-animation"> Mis nóminas </span>
+            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+            </svg>
+        </button>     
+    </div>
+</center>
+    
+<div class="card">
+    <div class="card-img"><img id="img_profile" src="{{ asset('uploads/files/'~user.photo)}}" alt=""></div>
+    <div class="card-info">
+        <h1>{{user.name}}</h1>
+        <p class="text-body">Nº de trabajador: #0{{user.id}}</p>
+        <p class="text-body">Email: {{user.email}}</p>
+        <p class="text-body">Nombre: {{user.name}}</p>
+        <p class="text-body">Apellido: {{user.username}}</p>
+        <p class="text-body">Dirección: {{user.adress}}</p>
+        <p class="text-body">Teléfono: {{user.phone}}</p>
+    </div>
+</div>
+
+      
+    <br>
+    <br>
+ {{ include('header/headerUser.html.twig') }}

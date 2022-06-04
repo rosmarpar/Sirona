@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="/css/form.css?v=<?php echo(rand()); ?>" />
+<br>
+    <h1>Editar proveedor</h1>
+    {{ include('provider/_form.html.twig', {'button_label': 'Editar'}) }}
+    <a href="{{ path('show_providers') }}"><img src="/images/volver-flecha.png" /></a>
+
+{{ include('header/headerAdmin.html.twig') }}

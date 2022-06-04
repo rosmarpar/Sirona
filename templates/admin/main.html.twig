@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="/css/main.css?v=<?php echo(rand()); ?>" />
+<div id="log">
+    <p >Usuario logueado: {{user.name}}</p>
+</div>
+<div id="content">
+    <h1>INFÓRMATE Y FÓRMATE</h1>
+</div>
+<ul class="cards">
+  <li>
+    <a href="https://www.euroinnova.edu.es/cursos-sanitarios" target="_blank" class="card">
+      <img src="/images/índice.png" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>    
+          <div class="card__header-text">
+            <h3 class="card__title">Euroinnova</h3>            
+            <span class="card__status">Cursos</span>
+          </div>
+        </div>
+        <p class="card__description">Cursos relacionados con la sanidad que nos ofrece formación en farmacía,matronas, medicina entre otros.</p>
+      </div>
+    </a>      
+  </li>
+  <li>
+    <a href="https://www.sanidad.gob.es/" target="_blank" class="card">
+      <img src="/images/ministerio.jpg"  class="card__image" alt="" />
+      <div class="card__overlay">        
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <div class="card__header-text">
+            <h3 class="card__title">Ministario de sanidad</h3>
+            <span class="card__status">Gobierno</span>
+          </div>
+        </div>
+        <p class="card__description">Información verificada sobre el ministerio de sanidad.</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.redaccionmedica.com/" target="_blank" class="card">
+      <img src="/images/redaccionMedica.webp" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <div class="card__header-text">
+            <h3 class="card__title">Redacción médica</h3>
+            <span class="card__tagline"></span>            
+            <span class="card__status">Noticias</span>
+          </div>
+        </div>
+        <p class="card__description">Diario digital de información sanitaria y actualización permanente, incluido fines de semana. Sanidad y política sanitaria.</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="http://esfarmacia.es/farmacias-en-valencia"  target="_blank"  class="card">
+      <img src="/images/logoFarmacia.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>  
+          <div class="card__header-text">
+            <h3 class="card__title">Listado de farmacias</h3>
+            <span class="card__status">Información</span>
+          </div>          
+        </div>
+        <p class="card__description">Lista todas las farmacias existentes en la Comunidad Valenciana</p>
+      </div>
+    </a>
+  </li>    
+</ul>
+
+<div id="content">
+    <h1>DATOS DE INTERÉS</h1>
+</div>
+
+  <div class="row1-container">
+    <div id="info" class="box box-down cyan">
+      <h2>Tu empresa</h2>
+      <p>Información</p>
+      <p><strong>CIF: B-997755661</strong></p>
+      <p><strong>Email: farmacia@farmacia.com</strong></p>
+      <p><strong>Teléfono: 958 958 958</strong></p>
+      <p><strong>Dirección: Calle de la farmacia, nº 1, Valencia</strong></p>
+      <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+    </div>
+
+    <div id="info" class="box box-down red">
+      <h2>Proveedores</h2>
+      <p>Contacta con los proveedores principales</p>
+      <p><strong>Proveedor 1</strong></p>
+      <p><strong>Teléfono: 958 958 958</strong></p>
+      <p><strong>Proveedor 2</strong></p>
+      <p><strong>Teléfono: 958 958 959</strong></p>
+      <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+    </div>
+
+    <div id="info" class="box box-down blue">
+      <h2>Técnicos</h2>
+      <p>Soporte técnico</p>
+      <p><strong>Contacto telefónico: 96 999 88 77</strong></p>
+      <p><strong>Email: sirona.assistant@sirona.com</strong></p>
+      <br>
+      <br>
+      <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+    </div>
+  </div>
+
+{{ include('header/headerAdmin.html.twig') }}

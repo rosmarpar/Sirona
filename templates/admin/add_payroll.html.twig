@@ -1,0 +1,14 @@
+ <link rel="stylesheet" href="/css/form.css?v=<?php echo(rand()); ?>" />
+{% block javascripts %}
+    <script src="{{ asset('/js/product.js') }}" type="text/javascript"></script>
+{% endblock %}
+<br>
+<h1>Añadir una nómina</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+    <button onclick="isDateCorrect()" class="btn" >Agregar</button>
+{{ form_end(form) }}
+
+
+{{ include('header/headerAdmin.html.twig') }}

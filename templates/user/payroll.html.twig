@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/css/payroll.css?v=<?php echo(rand()); ?>" />
+ <center>
+    <div id="titulo">
+        <h1>Mi perfil</h1>
+        <hr>
+        <h2>Bienvenido a tu espacio  {{user.name}}</h2>
+    </div>
+
+    <div id="contenido">
+        <button style="cursor:pointer" onclick="window.location='/user/profile'" class="cta">
+            <span class="hover-underline-animation"> Datos personales </span>
+            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+            </svg>
+        </button>
+
+        <button style="cursor:pointer" onclick="window.location='/user/payroll'" class="cta">
+            <span class="hover-underline-animation"> Mis nóminas </span>
+            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+            </svg>
+        </button>     
+    </div>
+
+    {% if payrolls == null %}
+        <div id="notExist">
+            <h1>No tienes nóminas</h1>
+        </div>
+
+        {% else %}
+
+        <div id="exist">
+            <h2>Nóminas</h2>
+           
+             <br>  
+             
+            {% for payroll in payrolls %}
+              <details>
+
+                <summary>Nómina #{{payroll.id}}</summary>
+                <div id="cont">
+                   <p> Fecha: {{payroll.date}} </p><p> Salario: {{payroll.salary}} € </p>
+                   <img src="{{ asset('uploads/files/'~payroll.file)}}" alt="">
+                </div>
+            </details>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+
+</center>
+ {{ include('header/headerUser.html.twig') }}

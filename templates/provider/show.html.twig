@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+
+    <h1>Mostrar proveedor</h1>
+    <br>
+    {{ include('provider/_delete_form.html.twig') }}
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ provider.id }}</td>
+            </tr>
+            <tr>
+                <th>Cif</th>
+                <td>{{ provider.cif }}</td>
+            </tr>
+            <tr>
+                <th>Nombre de empresa</th>
+                <td>{{ provider.nameEnterprise }}</td>
+            </tr>
+            <tr>
+                <th>Persona de contacto</th>
+                <td>{{ provider.personContact }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ provider.email }}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>
+                <td>{{ provider.adress }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ provider.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <br>
+    <br>
+    <a href="{{ path('show_providers') }}"><img src="/images/volver-flecha.png" /></a>   
+        
+    {{ include('header/headerAdmin.html.twig') }}

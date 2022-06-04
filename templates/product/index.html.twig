@@ -1,0 +1,46 @@
+    <link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+
+    <div id="content">
+        <h1>Inventario de productos</h1>
+    </div>
+    <div id="content">
+         <a href="{{ path('new_product') }}" style="color:black;"> <img src="/images/boton-agregar.png" /> Añadir nuevo</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Referencia</th>
+                <th>Cantidad</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.reference }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+              
+                <td>
+                    <a href="{{ path('show_product', {'id': product.id}) }}"><img src="/images/ojo.png" /></a>
+                    <a href="{{ path('edit_product', {'id': product.id}) }}"><img src="/images/editar.png" /></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">No hay registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{{ include('header/headerAdmin.html.twig') }}

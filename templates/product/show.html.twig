@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+
+    <h1>Mostrar producto</h1>
+    <br>
+    {{ include('product/_delete_form.html.twig') }}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <th>Referencia</th>
+                <td>{{ product.reference }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ product.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Descripción</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ product.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <br>
+    <br>
+    <a href="{{ path('show_products') }}"><img src="/images/volver-flecha.png" /></a>   
+        
+    {{ include('header/headerAdmin.html.twig') }}

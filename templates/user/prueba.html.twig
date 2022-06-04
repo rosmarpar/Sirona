@@ -1,0 +1,47 @@
+ <link rel="stylesheet" href="/css/search.css?v=<?php echo(rand()); ?>" />
+
+<center>
+
+    <div id="titulo">
+        <h1>PRUEBA</h1>
+        <hr>
+    </div>
+
+   
+
+    <hr id="endSearch">
+
+    <div id="resultados">
+        <h2>Resultados</h2>
+        <hr>
+        <div id="resultados-contenido">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Referencia</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% if product == null %}
+                    <p>No hay resultados</p>
+                {% else %}
+                {% for product in product %}
+                    <tr>
+                        <td>{{product.reference}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.price}}</td>
+                    </tr>
+                {% endfor %}
+                {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</center>
+
+{{ include('header/headerUser.html.twig') }}

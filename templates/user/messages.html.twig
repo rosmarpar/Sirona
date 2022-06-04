@@ -1,0 +1,21 @@
+ <link rel="stylesheet" href="/css/messages.css?v=<?php echo(rand()); ?>" />
+
+<center>
+
+    <div id="titulo">
+        <h1>Enviar mensajes</h1>
+         <i id="info" class="fa-solid fa-circle-info"></i>
+        <h5> En esta sección podrás enviar un email al receptor que tu desees.</p>   
+        <hr>
+    </div>
+
+
+<div class="group">
+    {{form_start(form)}}
+    {{form_widget(form)}}
+    {{form_end(form)}}
+</div>
+
+   
+
+{{ include('header/headerUser.html.twig') }}

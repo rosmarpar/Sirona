@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/search.css?v=<?php echo(rand()); ?>" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% block javascripts %}
+    <script src="{{ asset('/js/ajax_post _admin.js') }}" type="text/javascript"></script>
+{% endblock %}
+<center>
+
+    <div id="titulo">
+        <h1>Búsqueda de medicamentos</h1>
+        <i id="info" class="fa-solid fa-circle-info"></i>
+        <h5> En esta sección podrás buscar el nombre de cualquier medicamento y devolverá una lista con la información.</p>
+        
+        <hr>
+    </div>
+
+    <input type="text" id="input_text" placeholder="Buscar medicamento...">
+    <br>
+    <div id="titulo">
+        <h1>Resultados</h1>
+        <hr>
+       
+    </div> 
+    <div id="result"></div>
+<center>
+    
+
+
+{{ include('header/headerAdmin.html.twig') }}

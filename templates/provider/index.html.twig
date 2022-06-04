@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+
+<div id="content">
+    <h1>Listado de proveedores</h1>
+</div>
+<div id="content">
+    <a href="{{ path('new_provider') }}" style="color:black;"> <img src="/images/supervisor.png" /> Añadir nuevo</a>
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cif</th>
+                <th>Nombre de empresa</th>
+                <th>Persona de contacto</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for provider in providers %}
+            <tr>
+                <td>{{ provider.id }}</td>
+                <td>{{ provider.cif }}</td>
+                <td>{{ provider.nameEnterprise }}</td>
+                <td>{{ provider.personContact }}</td>
+                <td>{{ provider.email }}</td>
+                <td>{{ provider.adress }}</td>
+                <td>{{ provider.phone }}</td>
+                <td>
+                    <a href="{{ path('show_provider', {'id': provider.id}) }}"><img src="/images/ojo.png" /></a>
+                    <a href="{{ path('edit_provider', {'id': provider.id}) }}"><img src="/images/editar.png" /></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">No hay registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{{ include('header/headerAdmin.html.twig') }}

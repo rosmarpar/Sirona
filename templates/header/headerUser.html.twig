@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sirona</title>
+        <link rel="stylesheet" href="/css/header.css?v=<?php echo(rand()); ?>" />
+         <link rel="stylesheet" href="/css/footer.css?v=<?php echo(rand()); ?>" />
+        <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="body">
+        
+        <header>
+            <div class="icon__menu">
+                <i class="fas fa-bars" id="btn_open"></i>
+            </div>
+        </header>
+
+        <div class="menu__side" id="menu_side">
+
+            <div class="name__page">
+               <img id="logo" src="/images/logo.png" alt="">
+                <h4> <i> Sirona</i></h4>
+            </div>
+
+            <div class="options__menu">	
+
+                <a href="{{ path('user') }}" class="selected">
+                    <div class="option">
+                        <i class="fas fa-home" title="Inicio"></i>
+                        <h4>Inicio</h4>
+                    </div>
+                </a>
+
+                <a href="{{ path('user_search') }}">
+                    <div class="option">
+                       <i class="fa-solid fa-capsules" title="Medicamentos"></i>
+                        <h4>Medicamentos</h4>
+                    </div>
+                </a>
+  
+
+                <a href="{{ path('user_messages') }}">
+                    <div class="option">
+                        <i class="fa-solid fa-message " title="Mensajería"></i>
+                        <h4>Mensajería</h4>
+                    </div>
+                </a>
+
+                <a href="{{ path('user_profile') }}">
+                    <div class="option">
+                        <i class="far fa-id-badge" title="Mi perfil"></i>
+                        <h4>Mi perfil</h4>
+                    </div>
+                </a>
+
+                <a href="{{ path('app_logout') }}">
+                    <div class="option">
+                        <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesión"></i>
+                        <h4>Cerrar sesión</h4>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+ <footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">Sobre Sirona</div>
+         <p>Somos una empresa dirigida al sector farmacéutico ofreciendo una experiencia hacia el usuario lo más completa posible.</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contáctanos</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+34 966 55 44 33</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>sirona.enterprise@sirona.com</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Nuestros servicios</div>
+       <div><a href="#">Diseño web</a></div>
+       <div><a href="#">Diseño web UX</a></div>
+       <div><a href="#">Diseño de interfaz de usuario web</a></div>
+       <div><a href="#">Wireframing y prototipos</a></div>
+     </div>
+     <div class="right box">
+       <div class="topic">Encuéntranos en</div>
+       <form action="#">
+        
+         <div class="media-icons">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </form>
+     </div>
+   </div>
+
+ </footer>
+
+        {% block javascripts %}
+            <script src="{{ asset('/js/header.js') }}" type="text/javascript"></script>
+        {% endblock %}
+        
+    </body>
+</html>

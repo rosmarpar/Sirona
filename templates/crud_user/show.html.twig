@@ -1,0 +1,42 @@
+  <link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+    <h1>Mostrar trabajador: {{ user.name }}</h1>
+    <br>
+    {{ include('crud_user/_delete_form.html.twig') }}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Rol</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ user.surname }}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>
+                <td>{{ user.adress }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ user.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <br>
+    <br>
+    <a href="{{ path('show_workers') }}"><img src="/images/volver-flecha.png" /></a>   
+        
+    {{ include('header/headerAdmin.html.twig') }}

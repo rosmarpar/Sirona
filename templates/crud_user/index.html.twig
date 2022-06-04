@@ -1,0 +1,89 @@
+
+<link rel="stylesheet" href="/css/table.css?v=<?php echo(rand()); ?>" />
+
+<div id="content">
+    <h1>Lista de trabajadores</h1>
+</div>
+    
+<div id="content">
+    <a href="{{ path('add_worker') }}" style="color:black;"> <img src="/images/anadir-amigo.png" /> Añadir nuevo</a>
+</div>
+
+
+<table class="table">
+    <thead>  
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Acciones <i id="info" class="fa-solid fa-circle-info"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+       {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.adress }}</td>
+                <td>{{ user.phone }}</td>
+                <td>
+                    <a href="{{ path('show_worker', {'id': user.id}) }}"><img src="/images/ojo.png" /></a>
+                    <a href="{{ path('edit_worker', {'id': user.id}) }}" ><img src="/images/editar.png" /> 
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">No hay registros</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+ </table>
+
+ <div id="aparecer" style="visibility:hidden;">
+    <p>Al editar se reinicia la contraseña del usuario</p>
+</div>
+
+<script>
+
+    var info = document.getElementById("info");
+    var aparecer = document.getElementById("aparecer");
+
+//si pasas por encima del icono de información se muestra el texto cuando no se pase por encima no se muestra
+    info.addEventListener("mouseover", function(){
+        aparecer.style.visibility = "visible";
+        aparecer.style.width = "100px";
+        aparecer.style.height = "100px";
+        aparecer.style.backgroundColor = "#1d1f1e65";
+        aparecer.style.border = "1px ";
+        aparecer.style.position = "absolute";
+        aparecer.style.top = "15%";
+        aparecer.style.left = "92%";
+        aparecer.style.textAlign = "center";
+        aparecer.style.fontSize = "12px";
+        aparecer.style.fontWeight = "bold";
+        aparecer.style.padding = "10px";
+        aparecer.style.zIndex = "1";
+        aparecer.style.borderRadius = "5px";
+        
+
+
+
+    });
+    info.addEventListener("mouseout", function(){
+        aparecer.style.visibility = "hidden";
+    });
+   
+
+</script>
+
+
+
+ 
+
+{{ include('header/headerAdmin.html.twig') }}

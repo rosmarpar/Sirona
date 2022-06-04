@@ -1,0 +1,8 @@
+{% block javascripts %}
+    <script src="{{ asset('/js/product.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button onclick="iscorrect()" class="btn">{{ button_label|default('Guardar') }}</button>
+{{ form_end(form) }}

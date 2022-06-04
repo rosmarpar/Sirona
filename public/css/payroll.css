@@ -1,0 +1,134 @@
+   #titulo {
+       height: 100px;
+       background-color: #36414b;
+       color: white;
+       letter-spacing: 4px;
+   }
+   
+   #contenido {
+       margin-top: 20px;
+       margin-bottom: 20px;
+   }
+   
+   .cta {
+       border: none;
+       background: none;
+   }
+   
+   .cta span {
+       padding-bottom: 7px;
+       letter-spacing: 4px;
+       font-size: 10px;
+       padding-right: 15px;
+       text-transform: uppercase;
+   }
+   
+   .cta svg {
+       transform: translateX(-8px);
+       transition: all 0.3s ease;
+   }
+   
+   .cta:hover svg {
+       transform: translateX(0);
+   }
+   
+   .cta:active svg {
+       transform: scale(0.9);
+   }
+   
+   .hover-underline-animation {
+       position: relative;
+       color: black;
+       padding-bottom: 20px;
+   }
+   
+   .hover-underline-animation:after {
+       content: "";
+       position: absolute;
+       width: 100%;
+       transform: scaleX(0);
+       height: 1.5px;
+       bottom: 0;
+       left: 0;
+       background-color: rgb(216, 10, 10);
+       ;
+       transform-origin: bottom right;
+       transition: transform 0.25s ease-out;
+   }
+   
+   .cta:hover .hover-underline-animation:after {
+       transform: scaleX(1);
+       transform-origin: bottom left;
+   }
+   
+   #exist {
+       margin-top: 50px;
+   }
+   
+   footer {
+       margin-top: 300px;
+   }
+   
+   details {
+       background-color: #f6f8fa;
+       padding: 20px;
+       border-radius: 5px;
+       margin-top: 20px;
+       margin-bottom: 20px;
+       width: 80%;
+       /* color de fondo cuando no está desplegado */
+   }
+   
+   details:hover {
+       font-size: 20;
+   }
+   
+   details[open] {
+       background: #ffffff;
+       /* color de fondo cuando está desplegado */
+   }
+   
+   details summary {
+       font-weight: 400;
+       /* peso de la tipografía cuando  no está desplegado */
+       list-style: none;
+       /* ocultamos la flecha */
+       cursor: pointer;
+       /* cambia el cursor del puntero */
+       letter-spacing: 2px;
+   }
+   
+   details[open] summary {
+       font-weight: 600;
+       color: rgb(216, 10, 10);
+       width: 80%;
+       /* peso de la tipografía cuando está desplegado */
+   }
+   
+   details p {
+       background: #f6f8fa;
+       /* color de fondo del contenido oculto */
+   }
+   
+   details {
+       position: relative;
+   }
+   
+   details summary::before {
+       position: absolute;
+       content: "🧾";
+       font-size: 1.75rem;
+       top: 10px;
+       right: 16px;
+   }
+   
+   details[open] summary::before {
+       content: "💶️";
+       font-size: 1.75rem;
+   }
+   
+   #message {
+       width: 100%;
+       border-left: 2px solid rgb(216, 10, 10);
+       border-bottom: 0px;
+   }
