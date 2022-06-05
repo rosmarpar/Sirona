@@ -137,7 +137,7 @@ class CrudUserController extends AbstractController
                     'placeholder' => 'Ingrese su nombre',
                     'class' => 'form-control',
                     'name' => 'name',
-                    'maxlength' => '50',
+                    'maxlength' => '20',
                 ]
             ])
         ->add('surname', TextType::class,
@@ -150,6 +150,16 @@ class CrudUserController extends AbstractController
                     'maxlength' => '50',
                 ]
             ])
+            ->add('adress', TextType::class,
+            [
+                'label' => 'Dirección',
+                'attr' => [
+                    'placeholder' => 'Ingrese su dirección',
+                    'class' => 'form-control',
+                    'name' => 'adress',
+                    'maxlength' => '50',
+                ]
+            ])
         ->add('phone', TextType::class,
             [
                 'label' => 'Teléfono',
@@ -157,7 +167,7 @@ class CrudUserController extends AbstractController
                     'placeholder' => 'Ingrese su teléfono',
                     'class' => 'form-control',
                     'name' => 'phone',
-                    'maxlength' => '50',
+                    'maxlength' => '10',
                 ]
             ])
         ->getForm();
